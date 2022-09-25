@@ -1,5 +1,6 @@
 <template>
-    <button @click="toggle" :class="{checked:value}">
+    <button class="xiao-switch" 
+    @click="toggle" :class="{'xiao-checked':value}">
         <span></span>
     </button>
 </template>
@@ -17,10 +18,10 @@ export default{
     }
 }
 </script>
-<style lang="scss" scoped>
+<style lang="scss">
     $h: 22px;
     $h2: $h - 4px;
-    button{
+    .xiao-switch{
         height: $h;
         width: $h * 2;
         border: none;
@@ -37,10 +38,10 @@ export default{
             border-radius: $h2 /2;
             transition: all 250ms;
         }
-        &.checked {
+        &.xiao-checked {
             background: #1989FA
         }
-        &.checked > span{
+        &.xiao-checked > span{
             left: calc(100% - #{$h2} - 2px);
         }
     }
