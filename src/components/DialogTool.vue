@@ -13,10 +13,13 @@
             <Strong>加速的标题</Strong>
         </template>
     </Dialog>
+    <h2>示例2</h2>
+    <Button @click="showDialog">show</Button>
 </template>
 <script lang="ts">
 import Dialog from '../lib/Dialog.vue'
 import Button from '../lib/Button.vue'
+import {openDialog} from '../lib/openDialog'
 import {ref} from 'vue'
 export default{
     components:{Dialog,Button},
@@ -31,8 +34,14 @@ export default{
         const f2 = ()=>{
             
         }
+        const showDialog = ()=>{
+            openDialog({
+                title:'标题1',
+                content:'你好'
+            })
+        }
 
-        return {x,showMessage,f1,f2}
+        return {x,showMessage,f1,f2,showDialog}
     }
 }
 </script>
