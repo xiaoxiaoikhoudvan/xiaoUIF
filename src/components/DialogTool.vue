@@ -37,7 +37,14 @@ export default{
         const showDialog = ()=>{
             openDialog({
                 title:'标题1',
-                content:'你好'
+                content:'你好',
+                ok(){
+                    console.log("ok");
+                },
+                cancel(){
+                    console.log("cancel");
+                    
+                }
             })
         }
 
