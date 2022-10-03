@@ -1,12 +1,19 @@
 <template>
-    <div>
+    <div class="topnavBanner">
         <Topnav />
         <div class="banner">
-            <h1>xiaoUI</h1>
-            <h2>一个自制UI框架</h2>
+            <h1>XIAO</h1>
+            <h2>UI组件</h2>
             <p class="actions">
-                <a href="https://github.com">Github</a>
-                <router-link to="/doc">开始</router-link>
+                <router-link class="begin" to="/doc">
+                    快速上手<svg class="icon">
+                        <use xlink:href="#icon-right"></use>
+                    </svg>
+                </router-link>
+                <a href="https://github.com">
+                Github <svg class="icon">
+                        <use xlink:href="#icon-github"></use>
+                    </svg></a>
             </p>
         </div>
     </div>
@@ -18,13 +25,20 @@ export default{
 }
 </script>
 <style lang="scss" scoped>
+$green:#43B97F;
+$border-radius:20px;
+$text-color:#02273D;
+.topnavBanner{
+    background: #F7FFFD;
+}
     .banner{
-        padding: 100px 0;
+        color: #01293D;
+        padding: 240px 0;
         display: flex;
         justify-content: center;
         align-items: center;
         flex-direction: column;
-        background: lightblue;
+        // background: lightblue;
         > .actions{
             padding:8px 0;
             a {
@@ -32,10 +46,15 @@ export default{
                 background: #fff;
                 display: inline-block;
                 $h:28px;
-                height: $h;
-                line-height: $h;
-                border-radius: $h/2;
-                padding: 0 8px;
+                padding: 8px 24px;
+                border-radius: $border-radius;
+                &:hover{
+                    text-decoration: none;
+                }
+            }
+            .begin{
+                // letter-spacing:3px;
+                background: $green;
             }
         }
     }
