@@ -14,7 +14,11 @@ export const router = createRouter({
     history:history,
     routes:[
         {path:'/',component:Home},
-        {path:'/doc',component:Doc,children:[
+        {
+            path:'/doc',
+            component:Doc,
+            children:[
+            {path:'',redirect:'/doc/intro'},
             {path:'intro',component:Introduce},
             {path:'start',component:Start},
             {path:'install',component:Install},

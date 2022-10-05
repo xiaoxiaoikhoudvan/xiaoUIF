@@ -1,28 +1,17 @@
 <template>
     <div>
-        <p>Dialog 的文档</p>
+        <h1>Dialog组件展示</h1>
+        <Demo :component="DialogDemo1" />
     </div>
-    <h1>示例1</h1>
-    <Button @click="showMessage">提示弹窗</Button>
-    <Dialog v-model:visible="x" :closeOnClickOverlay="false" :ok="f1" :cancel="f2">
-        <template v-slot:content>
-            <Strong>h11</Strong>
-            <div>h22</div>
-        </template>
-        <template v-slot:title>
-            <Strong>加速的标题</Strong>
-        </template>
-    </Dialog>
-    <h2>示例2</h2>
-    <Button @click="showDialog">show</Button>
+    
 </template>
 <script lang="ts">
-import Dialog from '../lib/Dialog.vue'
-import Button from '../lib/Button.vue'
 import {openDialog} from '../lib/openDialog'
 import {ref} from 'vue'
+import Demo from './Demo.vue'
+import DialogDemo1 from './DialogDemo1.vue'
 export default{
-    components:{Dialog,Button},
+    components:{Demo},
     setup(){
         const x = ref(false)
         const showMessage = ()=>{
@@ -48,7 +37,7 @@ export default{
             })
         }
 
-        return {x,showMessage,f1,f2,showDialog}
+        return {DialogDemo1,x,showMessage,f1,f2,showDialog}
     }
 }
 </script>

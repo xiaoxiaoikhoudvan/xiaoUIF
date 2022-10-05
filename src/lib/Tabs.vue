@@ -13,7 +13,7 @@
             <!-- <component class="xiao-tabs-content-item" 
             :class="{selected:c.props.title === selected}"
             v-for="(c,index) in defaults" :is="c" :key="index" /> -->
-            <component :is="current" :key="current.props.title">
+            <component :is="current" :key="current.props.title" />
         </div>
     </div>
 </template>

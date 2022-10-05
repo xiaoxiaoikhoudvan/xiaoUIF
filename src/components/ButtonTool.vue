@@ -1,46 +1,30 @@
 <template>
-    <div>Button 示例</div>
-    <h1>示例1</h1>
-    <div>
-        <Button>你好</Button>
-        <Button theme="button">你好</Button>
-        <Button theme="color">你好</Button>
-        <Button theme="link">你好</Button>
-        <Button theme="text">你好</Button>
-    </div>
-    <h1>示例2</h1>
-    <div>
-        <Button size="big">大按钮</Button>
-        <Button>默认大小</Button>
-        <Button size="small">小按钮</Button>
-    </div>
-    <h1>示例3</h1>
-    <div>
-        <Button level="main">主要按钮</Button>
-        <Button level="normal">普通按钮</Button>
-        <Button level="danger">危险按钮</Button>
-        <Button level="success">成功按钮</Button>
-    </div>
-    <h1>示例5</h1>
-    <div>
-        <Button loading>加载中</Button>
-    </div>
-    <h1>示例4</h1>
-    <div>
-        <Button disabled>普通禁用按钮</Button>
-        <Button theme="link" disabled>链接式禁用按钮</Button>
-        <Button theme="text" disabled>文本式禁用按钮</Button>
-    </div>
+    <h1>Button组件展示</h1>
+    <Demo :component="ButtonDemo1" />
+    <Demo :component="ButtonDemo2" />
+    <Demo :component="ButtonDemo3" />
+    <Demo :component="ButtonDemo4" />
+    <Demo :component="ButtonDemo5" />
 </template>
 <script lang="ts">
-import Button from "../lib/Button.vue"
+import Demo from './Demo.vue'
+import ButtonDemo1 from './ButtonDemo1.vue'
+import ButtonDemo2 from './ButtonDemo2.vue'
+import ButtonDemo3 from './ButtonDemo3.vue'
+import ButtonDemo4 from './ButtonDemo4.vue'
+import ButtonDemo5 from './ButtonDemo5.vue'
+
 export default{
-    components:{Button},
+    components:{
+        Demo,
+        },
     setup() {
-        const onClick = ()=>{
-            
-        }
-        return {onClick}
+        return {
+        ButtonDemo1,
+        ButtonDemo2,
+        ButtonDemo3,
+        ButtonDemo4,
+        ButtonDemo5}
     }
 }
 </script>

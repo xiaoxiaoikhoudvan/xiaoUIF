@@ -18,16 +18,16 @@
                 <h2>组件列表</h2>
                 <ol>
                     <li>
-                        <router-link to="/doc/switch">Switch组件</router-link>
+                        <router-link to="/doc/switch">Switch 开关</router-link>
                     </li>
                     <li>
-                        <router-link to="/doc/button">Button组件</router-link>
+                        <router-link to="/doc/button">Button 按钮</router-link>
                     </li>
                     <li>
-                        <router-link to="/doc/dialog">Dialog组件</router-link>
+                        <router-link to="/doc/dialog">Dialog 弹出框</router-link>
                     </li>
                     <li>
-                        <router-link to="/doc/tabs">Tabs组件</router-link>
+                        <router-link to="/doc/tabs">Tabs 标签页</router-link>
                     </li>
                 </ol>
             </aside>
@@ -49,6 +49,7 @@ export default{
 }
 </script>
 <style lang="scss" scoped>
+$aside-index : 10;
 .layout{
     display: flex;
     flex-direction: column;
@@ -84,6 +85,7 @@ export default{
         left: 0;
         padding-top: 70px;
         height: 100%;
+        z-index: $aside-index;
         > h2 {
             margin-bottom: 4px;
         }
