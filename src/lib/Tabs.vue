@@ -51,7 +51,8 @@ export default {
         //检查子组件的标签类型
         const defaults = context.slots.default()
         defaults.forEach((tag)=>{
-            if(tag.type !== Tab){
+            //@ts-ignore
+            if(tag.type.name !== Tab.name){
                 throw new Error('Tabs 子标签必须是 Tab')
             }
         })

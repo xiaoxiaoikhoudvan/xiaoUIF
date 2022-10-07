@@ -43,9 +43,11 @@ $text-color:#02273D;
         display: flex;
         padding: 16px;
         position: fixed;
+        background-color: #fff;
         top: 0;
         left: 0;
         width: 100%;
+        box-shadow: 0 5px 5px rgba(#333, 0.1);
         z-index: 10;//为了写z-index要加上position:relative
         justify-content: center;
         align-items: center;
@@ -71,13 +73,22 @@ $text-color:#02273D;
             position: absolute;
             left: 16px;
             display: none;
+            // left: 16px;
+            // top: 50%;
+            // overflow: hidden;
             // top: 50%;
             // transform: translateY(-50%);
         }
         @media (max-width:500px) {
-            > .menu{display: none;}
-            > .logo{margin:0 auto}
-            > .toggleAside{display: inline-block;}
+            > .menu{
+                display: none;
+            }
+            > .logo{
+                margin:0 auto
+            }
+            > .toggleAside{
+                display: inline-block;
+            }
         }
     }
 </style>
