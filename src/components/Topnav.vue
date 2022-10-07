@@ -10,12 +10,12 @@
                     <router-link to="/doc">组件</router-link>
                 </li>
             </ul>
-            <svg 
-            v-if="asideButtonVisible"
-            class="toggleAside" 
-            @click="toggleMenu">
-            <use xlink:href="#icon-menu"></use>
-            </svg>
+                <svg 
+                v-if="asideButtonVisible"
+                class="toggleAside" 
+                @click="toggleMenu">
+                <use xlink:href="#icon-menu"></use>
+                </svg>
         </div>
 </template>
 <script lang="ts">
