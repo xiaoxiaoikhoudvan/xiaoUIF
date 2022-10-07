@@ -65,7 +65,8 @@ $border-color:#d9d9d9;
     &-code{
         padding: 8px 16px;
         border-top: 1px dashed $border-color;
-
+        transition: all 0.4s cubic-bezier(0.39, 0.7, 0.18, 0.9);
+        max-height: 0;
         >pre{
             line-height: 1.1;
             font-family: Consolas,'Courier New',Courier,monospace;

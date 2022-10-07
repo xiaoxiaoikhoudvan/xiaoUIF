@@ -44,7 +44,7 @@ export default {
 };
 </script>
 <style lang="scss">
-$lightbgc: #F7FFFD;
+$lightbgc: #E6F7FF;
 $black: #02273D;
 aside {
   position: absolute;
