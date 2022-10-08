@@ -11,7 +11,6 @@ import SwitchDemo1 from './SwitchDemo1.vue'
 import SwitchDemo2 from './SwitchDemo2.vue'
 import SwitchDemo3 from './SwitchDemo3.vue'
 import Demo from './Demo.vue'
-import {ref} from 'vue'
 export default{
     components:{Demo,SwitchDemo1,SwitchDemo2,SwitchDemo3},
     setup(){
