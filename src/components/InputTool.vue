@@ -1,7 +1,7 @@
 <template>
     <div>
         <h1>Input 输入框</h1>
-        <Input></Input>
+        <Input value="战三" @change="inputChange"></Input>
         <Input disabled></Input>
         <Input value="王五" readonly></Input>
         <Input value="李四" error="姓名难听"></Input>

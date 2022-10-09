@@ -5,7 +5,7 @@
       type="text" 
       :disabled="disabled" 
       :readonly="readonly"
-      >
+      @change="change">
       <template v-if="error">
           <svg class="icon">
             <use xlink:href="#icon-error"></use>
@@ -33,6 +33,12 @@ export default {
       error:{
         type:String
       }
+    },
+    setup(props) {
+      const change = ()=>{
+        console.log("???????change");
+      }
+      return {change}
     }
 }
 </script>
