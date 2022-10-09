@@ -1,29 +1,16 @@
 <template>
-  <div>
-    <h1>Input 示例</h1>
-
-    <Demo :component="InputValue" />
-    <Demo :component="InputDisabled" />
-    <Demo :component="InputReadOnly" />
-    <Demo :component="InputError" />
-  </div>
+    <div>
+        <h1>Input 输入框</h1>
+        <Input></Input>
+        <Input disabled></Input>
+        <Input value="王五" readonly></Input>
+        <Input value="李四" error="姓名难听"></Input>
+    </div>
 </template>
 <script lang="ts">
-import Demo from "./Demo.vue";
-import InputValue from "./InputValue.vue";
-import InputError from "./InputError.vue";
-import InputDisabled from "./InputDisabled.vue";
-import InputReadOnly from "./InputReadOnly.vue";
-
+import Demo from './Demo.vue'
+import Input from '../lib/Input.vue'
 export default {
-  components: { Demo },
-  setup() {
-    return {
-      InputValue,
-      InputError,
-      InputDisabled,
-      InputReadOnly,
-    };
-  },
-};
+    components:{Input}
+}
 </script>

@@ -19,7 +19,6 @@ export default {
     components:{Button,Toast},
     setup(props,context){
       const onClick1 = ()=>{
-        Toast({text: '这是一条普通的消息提示~', type: 'normal'})
       }
       const onClick2 = ()=>{
         // Toast({text: '这是一条普通的消息提示~', type: 'normal'})
