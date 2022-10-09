@@ -1,6 +1,6 @@
 <template>
     <div>
-        <h1>Switch 组件展示</h1>
+        <h1>Switch 弹窗</h1>
         <Demo :component="SwitchDemo1" />
         <Demo :component="SwitchDemo2" />
         <Demo :component="SwitchDemo3" />

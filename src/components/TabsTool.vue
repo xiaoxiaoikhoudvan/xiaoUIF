@@ -1,5 +1,8 @@
 <template>
-    <Demo :component="TabsDemo1" />
+    <div>
+        <h1>Tabs 标签页</h1>
+        <Demo :component="TabsDemo1" />
+    </div>
 </template>
 <script lang="ts">
 import Demo from './Demo.vue'
