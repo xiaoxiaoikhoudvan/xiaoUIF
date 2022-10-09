@@ -6,7 +6,7 @@
       type="text"
       :disabled="disabled"
       :readonly="readonly"
-      @change="inputval"
+      @change="inputChange"
       @input="inputval"
       @focus="inputBlur"
       @blur="inputBlur"
@@ -46,9 +46,9 @@ export default {
     const inputval = (e: KeyboardEvent) => {
       context.emit("update:value", (e.target as HTMLInputElement).value);
     };
-    // const inputBlur = (e: FocusEvent) => {
-    //   context.emit("update:modelValue", (e.target as HTMLInputElement).value);
-    // };
+    const inputBlur = (e: FocusEvent) => {
+      context.emit("update:modelValue", (e.target as HTMLInputElement).value);
+    };
     return {
       inputval
     };

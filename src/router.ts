@@ -5,6 +5,7 @@ import SwitchTool from './components/SwitchTool.vue'
 import ButtonTool from './components/ButtonTool.vue'
 import DialogTool from './components/DialogTool.vue'
 import TabsTool from './components/TabsTool.vue'
+import ToastTool from './components/ToastTool.vue'
 import InputTool from './components/InputTool.vue'
 import Introduce from './views/Introduce.vue'
 import Start from './views/Start.vue'
@@ -27,6 +28,7 @@ export const router = createRouter({
             {path:"button",component:ButtonTool},
             {path:"dialog",component:DialogTool},
             {path:"tabs",component:TabsTool},
+            {path:"toast",component:ToastTool},
             {path:"input",component:InputTool}
         ]},
     ]

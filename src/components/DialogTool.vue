@@ -1,7 +1,7 @@
 <template>
     <div>
         <h1>Dialog 弹窗</h1>
-        <Demo :component="DialogDemo1" />
+        <Demo :component="DialogDefaultDemo" />
     </div>
     
 </template>
@@ -9,7 +9,7 @@
 import {openDialog} from '../lib/openDialog'
 import {ref} from 'vue'
 import Demo from './Demo.vue'
-import DialogDemo1 from './DialogDemo1.vue'
+import DialogDefaultDemo from './DialogDemos/DialogDefaultDemo.vue'
 export default{
     components:{Demo},
     setup(){
@@ -37,7 +37,7 @@ export default{
             })
         }
 
-        return {DialogDemo1,x,showMessage,f1,f2,showDialog}
+        return {DialogDefaultDemo,x,showMessage,f1,f2,showDialog}
     }
 }
 </script>

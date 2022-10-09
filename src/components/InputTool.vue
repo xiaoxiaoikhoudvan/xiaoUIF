@@ -4,7 +4,7 @@
 
     <Demo :component="InputValue" />
     <Demo :component="InputDisabled" />
-    <Demo :component="InputReadOnly"></Demo>
+    <Demo :component="InputReadOnly" />
     <Demo :component="InputError" />
   </div>
 </template>

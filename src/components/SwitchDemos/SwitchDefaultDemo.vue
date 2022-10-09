@@ -1,11 +1,11 @@
 <demo>
-常规用法
+默认
 </demo>
 <template>
     <Switch v-model:value="bool" />
 </template>
 <script lang="ts">
-import Switch from '../lib/Switch.vue'
+import Switch from '../../lib/Switch.vue'
 import {ref} from 'vue'
 export default {
     components:{Switch},
@@ -15,3 +15,9 @@ export default {
     }
 }
 </script>
+
+<style lang="scss" scoped>
+// .coast-button {
+//   margin-top: 14px;
+// }
+</style>

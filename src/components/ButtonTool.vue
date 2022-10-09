@@ -1,18 +1,18 @@
 <template>
     <h1>Button 按钮</h1>
-    <Demo :component="ButtonDemo1" />
-    <Demo :component="ButtonDemo2" />
-    <Demo :component="ButtonDemo3" />
-    <Demo :component="ButtonDemo4" />
-    <Demo :component="ButtonDemo5" />
+    <Demo :component="ButtonDefaultDemo" />
+    <Demo :component="ButtonDisabledDemo" />
+    <Demo :component="ButtonLevelDemo" />
+    <Demo :component="ButtonLoadingDemo" />
+    <Demo :component="ButtonSizeDemo" />
 </template>
 <script lang="ts">
 import Demo from './Demo.vue'
-import ButtonDemo1 from './ButtonDemo1.vue'
-import ButtonDemo2 from './ButtonDemo2.vue'
-import ButtonDemo3 from './ButtonDemo3.vue'
-import ButtonDemo4 from './ButtonDemo4.vue'
-import ButtonDemo5 from './ButtonDemo5.vue'
+import ButtonDefaultDemo from './ButtonDemos/ButtonDefaultDemo.vue'
+import ButtonDisabledDemo from './ButtonDemos/ButtonDisabledDemo.vue'
+import ButtonLevelDemo from './ButtonDemos/ButtonLevelDemo.vue'
+import ButtonLoadingDemo from './ButtonDemos/ButtonLoadingDemo.vue'
+import ButtonSizeDemo from './ButtonDemos/ButtonSizeDemo.vue'
 
 export default{
     components:{
@@ -20,11 +20,11 @@ export default{
         },
     setup() {
         return {
-        ButtonDemo1,
-        ButtonDemo2,
-        ButtonDemo3,
-        ButtonDemo4,
-        ButtonDemo5}
+        ButtonDefaultDemo,
+        ButtonDisabledDemo,
+        ButtonLevelDemo,
+        ButtonLoadingDemo,
+        ButtonSizeDemo}
     }
 }
 </script>

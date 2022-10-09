@@ -1,5 +1,5 @@
 <demo>
-常规使用
+默认
 </demo>
 <template>
 <div>
@@ -12,7 +12,7 @@
 </template>
 
 <script lang="ts">
-import Button from "../lib/Button.vue";
+import Button from "../../lib/Button.vue";
 export default {
   components: {
     Button
