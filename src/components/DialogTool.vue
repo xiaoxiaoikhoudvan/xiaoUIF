@@ -11,7 +11,7 @@ import {ref} from 'vue'
 import Demo from './Demo.vue'
 import DialogDefaultDemo from './DialogDemos/DialogDefaultDemo.vue'
 export default{
-    components:{Demo},
+    components:{Demo,DialogDefaultDemo},
     setup(){
         const x = ref(false)
         const showMessage = ()=>{

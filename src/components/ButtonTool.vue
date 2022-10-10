@@ -17,6 +17,11 @@ import ButtonSizeDemo from './ButtonDemos/ButtonSizeDemo.vue'
 export default{
     components:{
         Demo,
+        ButtonDefaultDemo,
+        ButtonDisabledDemo,
+        ButtonLevelDemo,
+        ButtonLoadingDemo,
+        ButtonSizeDemo
         },
     setup() {
         return {

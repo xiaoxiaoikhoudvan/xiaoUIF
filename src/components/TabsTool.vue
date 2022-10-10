@@ -9,7 +9,7 @@ import Demo from './Demo.vue'
 import TabsDefaultDemo from './TabsDemos/TabsDefaultDemo.vue'
 import {ref} from 'vue'
 export default {
-    components:{Demo},
+    components:{Demo,TabsDefaultDemo},
     setup() {
         const x = ref('导航11')
         return {x,TabsDefaultDemo}

@@ -46,17 +46,17 @@ import { router } from "../router";
 export default{
     components:{Topnav,Aside},
     setup() {
-        onMounted(() => {
-            let main = document.querySelector("main");
-            console.log("main=>",main);
-            router.beforeEach(() => {
-                main.scrollTop = 0;
-            });
-        });
-        // const menuVisible = inject<Ref<boolean>>('menuVisible');
-        // console.log("menuVisible=>",menuVisible.value);
+        // onMounted(() => {
+        //     let main = document.querySelector("main");
+        //     console.log("main=>",main);
+        //     router.beforeEach(() => {
+        //         main.scrollTop = 0;
+        //     });
+        // });
+        const menuVisible = inject<Ref<boolean>>('menuVisible');
+        console.log("menuVisible=>",menuVisible.value);
         
-        // return {menuVisible}
+        return {menuVisible}
     }
 }
 </script>

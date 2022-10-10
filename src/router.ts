@@ -28,7 +28,7 @@ export const router = createRouter({
             {path:"button",component:ButtonTool},
             {path:"dialog",component:DialogTool},
             {path:"tabs",component:TabsTool},
-            {path:"toast",component:ToastTool},
+            // {path:"toast",component:ToastTool},
             {path:"input",component:InputTool}
         ]},
     ]

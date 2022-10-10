@@ -27,9 +27,9 @@
         <li>
           <router-link to="/doc/tabs">Tabs 标签页</router-link>
         </li>
-        <li>
+        <!-- <li>
           <router-link to="/doc/toast">Toast 组件</router-link>
-        </li>
+        </li> -->
          <li>
           <router-link to="/doc/input">Input 输入框</router-link>
         </li>

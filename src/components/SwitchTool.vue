@@ -1,9 +1,9 @@
 <template>
     <div>
         <h1>Switch 弹窗</h1>
-        <Demo :component="SwitchDemo1" />
-        <Demo :component="SwitchDemo2" />
-        <Demo :component="SwitchDemo3" />
+        <Demo :component="SwitchDefaultDemo" />
+        <Demo :component="SwitchDisabledDemo" />
+        <Demo :component="SwitchLoadingDemo" />
     </div>
 </template>
 <script lang="ts">
