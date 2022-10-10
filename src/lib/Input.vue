@@ -12,7 +12,6 @@
           </svg>
           <span class="xiao-errorMessage">{{error}}</span>
       </template>
-      
     </div>
 </template>
 <script lang="ts">

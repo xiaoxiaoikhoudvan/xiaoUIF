@@ -33,6 +33,9 @@
          <li>
           <router-link to="/doc/input">Input 输入框</router-link>
         </li>
+         <li>
+          <router-link to="/doc/grid">Grid 布局</router-link>
+        </li>
       </ol>
     </aside>
   </transition>
