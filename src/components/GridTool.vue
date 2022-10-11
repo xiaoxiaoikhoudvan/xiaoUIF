@@ -1,23 +1,27 @@
 <template>
-    <div>
-        <Row>
-            <Col></Col>
-            <Col></Col>
+    <div style="border: 1px solid black">
+        <Row gutter="20">
+            <Col>1</Col>
+            <Col>2</Col>
         </Row>
-        <Row>
-            <Col></Col>
-            <Col></Col>
-            <Col></Col>
+        <Row gutter="20">
+            <Col>3</Col>
+            <Col>4</Col>
+            <Col>5</Col>
         </Row>
-        <Row>
-            <Col></Col>
-            <Col></Col>
-            <Col></Col>
-            <Col></Col>
+        <Row gutter="20">
+            <Col>6</Col>
+            <Col>7</Col>
+            <Col>8</Col>
+            <Col>9</Col>
         </Row>
-        <Row>
-            <Col span="2"></Col>
-            <Col span="22"></Col>
+        <Row gutter="20">
+            <Col span="2">10</Col>
+            <Col span="22">11</Col>
+        </Row>
+        <Row gutter="20">
+            <Col span="2">12</Col>
+            <Col span="20" offset="2">13</Col>
         </Row>
     </div>
 </template>

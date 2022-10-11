@@ -52,6 +52,7 @@ export default {
 <style lang="scss">
 $lightbgc: #E6F7FF;
 $black: #02273D;
+$deepBlue:#1890FF;
 aside {
   position: absolute;
   top: 0;
@@ -101,7 +102,7 @@ aside {
             right: 0;
             width: 3px;
             height: 40px;
-            background-color: $black;
+            background-color: $deepBlue;
           }
         }
       }

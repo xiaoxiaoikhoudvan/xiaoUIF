@@ -1,8 +1,22 @@
 <template>
-    <div class="row">
+    <div class="row" :style="{marginLeft:-gutter/2+'px',marginRight:-gutter/2+'px'}">
         <slot></slot>
     </div>
 </template>
+<script lang="ts">
+import { provide } from 'vue'
+export default {
+    props:{
+        gutter:{
+            type:[Number,String]
+        }
+    },
+    setup(props){
+        const {gutter} = props;
+        provide('gutter',gutter)
+    }
+}
+</script>
 
 <style lang="scss" scoped>
     .row{
