@@ -1,14 +1,10 @@
 <template>
-    <div class="col" :class="[span && `col-${span}`,offset && `offset-${offset}`]"
-        :style="{paddingLeft:x/2 + 'px',paddingRight: x/2 + 'px'}">
-        <div style="border: 1px solid green">
+    <div class="col" :class="colClass" :style="colStyle">
             <slot></slot>
-        </div>
-        
     </div>
 </template>
 <script lang="ts">
-import {inject} from 'vue'
+import {inject,ref,computed} from 'vue'
 export default {
     props:{
         span:{
@@ -16,12 +12,26 @@ export default {
         },
         offset:{
             type:[Number,String]
-        }
+        },
+        // phone:{
+        //     type:Object,
+        // }
     },
     setup(props) {
-      const x = inject('gutter')  
-      console.log("x=>",x);
-      return {x}
+      const gutter = inject('gutter')  
+      let colClass = computed(()=>{
+        return [
+            props.span && `col-${props.span}`,
+            props.offset && `offset-${props.offset}`
+        ]
+      })
+      let colStyle = computed(()=>{
+        return {
+            paddingLeft:gutter as number/2 + 'px',
+            paddingRight:gutter as number/2 + 'px'
+        }
+      })
+      return {gutter,colStyle,colClass}
     }
 }
 </script>
@@ -42,6 +52,8 @@ export default {
                 margin-left: ($n/24) * 100%;
             }
         }
-        
+    }
+    @media (max-width:576px){
+
     }
 </style>

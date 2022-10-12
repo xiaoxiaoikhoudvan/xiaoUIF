@@ -1,27 +1,8 @@
 <template>
-    <div style="border: 1px solid black">
+    <div>
         <Row gutter="20">
-            <Col>1</Col>
-            <Col>2</Col>
-        </Row>
-        <Row gutter="20">
-            <Col>3</Col>
-            <Col>4</Col>
-            <Col>5</Col>
-        </Row>
-        <Row gutter="20">
-            <Col>6</Col>
-            <Col>7</Col>
-            <Col>8</Col>
-            <Col>9</Col>
-        </Row>
-        <Row gutter="20">
-            <Col span="2">10</Col>
-            <Col span="22">11</Col>
-        </Row>
-        <Row gutter="20">
-            <Col span="2">12</Col>
-            <Col span="20" offset="2">13</Col>
+            <Col span="11">1</Col>
+            <Col span="13">2</Col>
         </Row>
     </div>
 </template>
