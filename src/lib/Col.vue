@@ -45,21 +45,37 @@ export default {
         },
     },
     setup(props) {
-        
+        const {span,offset,pad,narrowPc,pc,widePc} = props
         console.log("props=>",props);
         console.log("props.span=>",props.span);
         
       const gutter = inject('gutter')  
+      let createClasses = (obj,str='')=>{
+            if(!obj){return []}
+            let array = []
+            if(obj.span){
+                array.push(`col-${str}${obj.span}`)
+            }
+            if(obj.offset){
+                array.push(`offset-${str}${obj.offset}`)
+            }
+            return array
+        }
       let colClass = computed(()=>{
         console.log("this=>",this);
         return [
-            props.span && `col-${props.span}`,
-            props.offset && `offset-${props.offset}`,
+            ...createClasses({span,offset}),
+            ...createClasses(pad,'pad-'),
+            ...createClasses(narrowPc,'narrow-pc-'),
+            ...createClasses(pc,'pc-'),
+            ...createClasses(widePc,'wide-pc-')
+            // props.span && `col-${props.span}`,
+            // props.offset && `offset-${props.offset}`,
             // ...(props.phone ? [`col-phone-${props.phone.span}`] : []),
-            ...(props.pad ? [`col-pad-${props.pad.span}`] : []),
-            ...(props.narrowPc ? [`col-narrow-pc-${props.narrowPc.span}`] : []),
-            ...(props.widePc ? [`col-wide-pc-${props.widePc.span}`] : []),
-            ...(props.pc ? [`col-pc-${props.pc.span}`] : [])
+            // ...(props.pad ? [`col-pad-${props.pad.span}`] : []),
+            // ...(props.narrowPc ? [`col-narrow-pc-${props.narrowPc.span}`] : []),
+            // ...(props.widePc ? [`col-wide-pc-${props.widePc.span}`] : []),
+            // ...(props.pc ? [`col-pc-${props.pc.span}`] : [])
         ]
       })
       let colStyle = computed(()=>{
@@ -68,7 +84,7 @@ export default {
             paddingRight:gutter as number/2 + 'px'
         }
       })
-      return {gutter,colStyle,colClass}
+      return {gutter,colStyle,colClass,createClasses}
     }
 }
 </script>

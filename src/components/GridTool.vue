@@ -1,10 +1,10 @@
 <template>
     <div>
         <Row>
-            <Col span="24" :pad="{span:12}" :narrow-pc="{span:8}">
+            <Col span="23" offset="1" :pad="{span:12,offset:12}" :narrow-pc="{span:8,offset:12}">
                 <div class="demo">1</div>
             </Col>
-            <Col span="24" :pad="{span:12}" :narrow-pc="{span:8}">
+            <!-- <Col span="24" :pad="{span:12}" :narrow-pc="{span:8}">
                 <div class="demo">2</div>
             </Col>
             <Col span="24" :pad="{span:12}" :narrow-pc="{span:8}">
@@ -18,7 +18,7 @@
             </Col>
             <Col span="24" :pad="{span:12}" :narrow-pc="{span:8}">
                 <div class="demo">6</div>
-            </Col>
+            </Col> -->
         </Row>
     </div>
 </template>
