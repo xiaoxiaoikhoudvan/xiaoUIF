@@ -8,6 +8,7 @@ import TabsTool from './components/TabsTool.vue'
 import ToastTool from './components/ToastTool.vue'
 import InputTool from './components/InputTool.vue'
 import GridTool from './components/GridTool.vue'
+import LayoutTool from './components/LayoutTool.vue'
 import Introduce from './views/Introduce.vue'
 import Start from './views/Start.vue'
 import Install from './views/Install.vue'
@@ -29,9 +30,10 @@ export const router = createRouter({
             {path:"button",component:ButtonTool},
             {path:"dialog",component:DialogTool},
             {path:"tabs",component:TabsTool},
-            // {path:"toast",component:ToastTool},
+            {path:"toast",component:ToastTool},
             {path:"input",component:InputTool},
-            {path:"grid",component:GridTool}
+            {path:"grid",component:GridTool},
+            {path:"layout",component:LayoutTool}
         ]},
     ]
 });
