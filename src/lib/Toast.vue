@@ -1,10 +1,18 @@
 <template>
-    <div class="xiao-coast" :class="classes">
-        {{text}}
+    <div
+    v-show="visible"
+    class="xiao-coast" 
+    :class="classes"
+    @mouseleave="startTimer"
+    @mouseenter="clearTimer"
+    >
+        <span>{{text}}</span>
+        <div class="line" :class="lineStyle"></div>
+        <span class="close" @click="handleClose">关闭</span>
     </div>
 </template>
 <script lang="ts">
-import {computed} from 'vue'
+import {computed,onMounted,ref} from 'vue'
 export default {
     name:'xiaoToast',
     props:{
@@ -14,16 +22,62 @@ export default {
         type:{
             type:String,
             default:'normal'
-        }
+        },
+        autoClose:{
+            type:Boolean,
+            default:true
+        },
+        autoCloseDelay:{
+            type:Number,
+            default:2
+        },
+        id:{
+            type: String,
+            required: false,
+            default: '',
+        },
+        // closeButton:{
+        //     type:Object,
+        //     default:()=>{
+        //         return {
+        //             text:'关闭',callback:(toast)=>{
+        //                 // toast.close()
+        //             }
+        //         }
+        //     }
+        // }
     },
-    setup(props) {
+    setup(props,context) {
         console.log("props=>",props);
+        const {type,text,autoClose,autoCloseDelay} = props
+        const timer = ref(null)
+        const visible = ref(false)
+        onMounted(()=>{
+            visible.value = true
+            startTimer()
+        })
+        const handleClose = () => {
+            visible.value = false;
+            context.emit('destroy');
+        };
+        const startTimer = ()=>{
+            if(props.autoCloseDelay > 0){
+                timer.value = setTimeout(()=>{
+                    handleClose();
+                },autoCloseDelay * 1000)
+            }
+        }
         const classes = computed(()=>{
             return {
-                [`xiao-coast-${props.type}`]:props.type,
+                [`xiao-coast-${type}`]:type,
             }
         })
-        return{classes}
+        const lineStyle = computed(()=>{
+            return {
+                [`xiao-line-${type}`]:type
+            }
+        })
+        return{classes,visible,timer,handleClose,lineStyle}
     }
 }
 </script>
@@ -50,7 +104,8 @@ export default {
         position:fixed;
         top:78px;
         left:50%;
-        padding:8px 24px;
+        width: 200px;
+        padding:8px 16px;
         border-radius: 4px;
         display:flex;
         align-items:center;
@@ -74,4 +129,32 @@ export default {
             border: 1px solid $error-border;
         }
     }
+    .close{
+        // border: 1px solid red;
+        padding-left: 2px;
+        font-size:$font-size;
+        position:fixed;
+        top:87px;
+        left:59%;
+        &:hover{
+            cursor: pointer;
+        }
+    }
+    .line{
+        height: 100%;
+        margin-left: 14px;
+    }
+    .xiao-line-normal{
+        border-left: 1px solid $normal-textColor;
+    }
+    .xiao-line-success{
+        border-left: 1px solid $success-textColor;
+    }
+    .xiao-line-warning{
+        border-left: 1px solid $warning-textColor;
+    }
+    .xiao-line-error{
+        border-left: 1px solid $error-textColor;
+    }
+
 </style>
