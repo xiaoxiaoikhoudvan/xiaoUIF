@@ -29,7 +29,7 @@ export default {
         },
         autoCloseDelay:{
             type:Number,
-            default:2
+            default:0
         },
         id:{
             type: String,
@@ -62,9 +62,9 @@ export default {
         };
         const startTimer = ()=>{
             if(props.autoCloseDelay > 0){
-                timer.value = setTimeout(()=>{
-                    handleClose();
-                },autoCloseDelay * 1000)
+                // timer.value = setTimeout(()=>{
+                //     handleClose();
+                // },autoCloseDelay * 1000)
             }
         }
         const classes = computed(()=>{
@@ -101,9 +101,9 @@ export default {
     .xiao-coast{
         height:$toast-height;
         font-size:$font-size;
-        position:fixed;
-        top:78px;
-        left:50%;
+        position:relative;
+        top:-870px;
+        left:800px;
         width: 200px;
         padding:8px 16px;
         border-radius: 4px;
@@ -133,9 +133,9 @@ export default {
         // border: 1px solid red;
         padding-left: 2px;
         font-size:$font-size;
-        position:fixed;
-        top:87px;
-        left:59%;
+        position:absolute;
+        top:9px;
+        left:154px;
         &:hover{
             cursor: pointer;
         }

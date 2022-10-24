@@ -9,11 +9,21 @@
                 <x-content>content</x-content>
             </x-layout>
             <x-footer>footer</x-footer>
-        </x-layout>
-        <x-layout>
+    </x-layout>
+    <br />
+    <x-layout>
             <x-header>header</x-header>
             <x-content>content</x-content>
-        </x-layout>
+    </x-layout>
+    <br />
+    <x-layout>
+            <x-sider>sider</x-sider>
+            <x-layout>
+                <x-header>header</x-header>
+                <x-content>content</x-content>
+                <x-footer>footer</x-footer>
+            </x-layout>
+    </x-layout>
 </template>
 
 <script lang="ts">
@@ -35,7 +45,7 @@ export default {
 <style lang="scss" scoped>
     .header{
         text-align: center;
-        line-height: 100px;
+        line-height: 50px;
     }
     .sider{
         text-align: center;
@@ -47,6 +57,6 @@ export default {
     }
     .footer{
         text-align: center;
-        line-height: 100px;
+        line-height: 50px;
     }
 </style>
