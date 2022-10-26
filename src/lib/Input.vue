@@ -1,11 +1,13 @@
 <template>
     <div class="xiao-wrapper" :class="{'xiao-error':error}">
       <input 
+      v-bind="$attrs"
       :value="value" 
-      type="text" 
       :disabled="disabled" 
+      :placeholder="placeholder"
       :readonly="readonly"
-      @change="change">
+      :type="type"
+      @change="onChange">
       <template v-if="error">
           <svg class="icon">
             <use xlink:href="#icon-error"></use>
@@ -31,22 +33,28 @@ export default {
       },
       error:{
         type:String
+      },
+      placeholder:{
+        type:String
+      },
+      type:{
+        type:String,
+        default:'text'
       }
     },
-    setup(props) {
-      const change = ()=>{
-        console.log("???????change");
+    setup(props,context) {
+      const onChange = (e)=>{
+        context.emit("update:value",e.target.value)
       }
-      return {change}
+      return {onChange}
     }
 }
 </script>
 <style lang="scss" scoped>
-$height:32px;
-$border-color:#999;
-$border-color-hover:#666;
+$border-color:#C0C4CC;
+$border-color-hover:#409EFF;
 $border-radius:4px;
-$font-size:12px;
+$font-size:14px;
 $box-shadow-color:rgba(0,0,0,0);
 $red:#F1453D;
   .xiao-wrapper{
@@ -57,7 +65,7 @@ $red:#F1453D;
       margin-right: .5em;
     }
     > input{
-      height: 32px;
+      height: 35px;
       border: 1px solid $border-color;
       border-radius: $border-radius;
       padding: 0 8px;
@@ -66,12 +74,14 @@ $red:#F1453D;
         border-color: $border-color-hover;
       }
       &:focus{
-        box-shadow: inset 0 1px 3px;
+        // box-shadow: inset 0 1px 3px;
+        border-color: $border-color-hover;
         outline: none;
       }
       &[disabled],&[readonly]{
-        border-color:#333;
-        color:#333;
+        border-color:$border-color;
+        color:$border-color;
+        background:#F5F7FA;
         cursor:not-allowed;
       }
     }

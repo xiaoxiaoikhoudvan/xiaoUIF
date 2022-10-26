@@ -1,8 +1,8 @@
 <demo>
-基础用法
+密码框
 </demo>
 <template>
-    <x-input v-model:value="value" placeholder="请输入内容" />
+    <x-input v-model:value="value" placeholder="请输入密码" type="password" />
 </template>
 
 <script lang="ts">
