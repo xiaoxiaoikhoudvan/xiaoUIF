@@ -2,7 +2,7 @@
     <div class="layout">
         <Topnav asideButtonVisible class="nav"/>
         <div class="content">
-            <Aside />
+            <Aside :visible="menuVisible" @change="asideVisibleChange"/>
             <!-- <aside v-if="menuVisible">
                 <h2>文档</h2>
                 <ol>
@@ -54,9 +54,12 @@ export default{
         //     });
         // });
         const menuVisible = inject<Ref<boolean>>('menuVisible');
+        const asideVisibleChange = (visible: boolean) => {
+            menuVisible.value = visible;
+        };
         console.log("menuVisible=>",menuVisible.value);
         
-        return {menuVisible}
+        return {menuVisible,asideVisibleChange}
     }
 }
 </script>
@@ -93,33 +96,4 @@ export default{
         }
     }
 }
-    // aside{
-    //     background: #F7FFFD;
-    //     width: 150px;
-    //     padding: 16px 0;
-    //     position: fixed;
-    //     top: 0;
-    //     left: 0;
-    //     padding-top: 70px;
-    //     height: 100%;
-    //     z-index: $aside-index;
-    //     @media (max-width:500px){
-    //     }
-    //     > h2 {
-    //         margin-bottom: 4px;
-    //     }
-    //     > ol{
-    //         > li{
-    //             >a{
-    //                 //a标签默认是inline元素 要改成block
-    //                 display: block;
-    //                 padding: 4px 16px;
-    //                 text-decoration: none;
-    //             }
-    //             // .router-link-active{
-    //             //     background: white;
-    //             // }
-    //         }
-    //     }
-    // }
 </style>

@@ -29,8 +29,11 @@ export default{
     },
    setup() {
         const menuVisible = inject<Ref<boolean>>('menuVisible');
+        console.log("menuVisible===>",menuVisible);
+        
         const toggleMenu = ()=>{
             menuVisible.value = !menuVisible.value
+            console.log("toggleMenu_menuVisible.value",menuVisible.value);
         }
         return {toggleMenu}
     } 
@@ -48,7 +51,7 @@ $text-color:#02273D;
         left: 0;
         width: 100%;
         box-shadow: 0 5px 5px rgba(#333, 0.1);
-        z-index: 10;//为了写z-index要加上position:relative
+        z-index: 11;//为了写z-index要加上position:relative
         justify-content: center;
         align-items: center;
         > .logo{
@@ -80,14 +83,14 @@ $text-color:#02273D;
             // transform: translateY(-50%);
         }
         @media (max-width:500px) {
+            > .toggleAside{
+                display: inline-block;
+            }
             > .menu{
                 display: none;
             }
             > .logo{
                 margin:0 auto
-            }
-            > .toggleAside{
-                display: inline-block;
             }
         }
     }

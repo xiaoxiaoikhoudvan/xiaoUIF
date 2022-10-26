@@ -1,6 +1,9 @@
 <template>
-  <transition name="slide">
-    <aside v-show="menuVisible">
+  <!-- <transition name="slide"> -->
+    <Teleport to="body">
+    <div class="aside-overlay" v-show="overlayVisible" @click="closeAsideNav"></div>
+    <aside :class="{visible}" @click="clickAsideNav">
+    <!-- <aside v-show="menuVisible" :class="visible" @click="clickAsideNav"> -->
       <h2>文档</h2>
       <ol>
         <li>
@@ -10,7 +13,7 @@
           <router-link to="/doc/install">安装</router-link>
         </li>
         <li>
-          <router-link to="/doc/get-started">开始使用</router-link>
+          <router-link to="/doc/start">开始使用</router-link>
         </li>
       </ol>
       <h2>组件</h2>
@@ -27,9 +30,9 @@
         <li>
           <router-link to="/doc/tabs">Tabs 标签页</router-link>
         </li>
-        <li>
+        <!-- <li>
           <router-link to="/doc/toast">Toast 组件</router-link>
-        </li>
+        </li> -->
          <li>
           <router-link to="/doc/input">Input 输入框</router-link>
         </li>
@@ -41,34 +44,81 @@
         </li>
       </ol>
     </aside>
-  </transition>
+    </Teleport>
+  <!-- </transition> -->
 </template>
 <script lang="ts">
-import { inject, Ref } from "vue";
+import { computed, inject, Ref } from "vue";
 export default {
-  setup() {
-    const menuVisible = inject<Ref<boolean>>("menuVisible");
-    return { menuVisible };
+  props:{
+    visible:{
+      type:Boolean
+    }
+  },
+  setup(props,context) {
+    // const menuVisible = inject<Ref<boolean>>("menuVisible");
+    const {visible} = props
+    const closeAsideNav = ()=>{
+      console.log("???????????????");
+      
+      context.emit("update:visible",false)
+    }
+    const overlayVisible = computed(()=>{
+      console.log("aside_props=>",props);
+      
+      const clientWidth = document.documentElement.clientWidth
+      
+      return clientWidth <= 500 ? visible : false;
+    })
+    return { overlayVisible,closeAsideNav };
   },
 };
 </script>
-<style lang="scss">
+<style lang="scss" scoped>
 $lightbgc: #E6F7FF;
 $black: #02273D;
 $deepBlue:#1890FF;
+$asideIndex:10;
+.aside-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: $asideIndex;
+}
 aside {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 285px;
   height: 100vh;
-  // font-size: 18px;
-  padding: 16px 0;
+  // padding: 16px 0;
   padding-top: 80px;
   background: #fff;
   box-shadow: 5px 0 5px rgba(#333, 0.1);
-  z-index: 1;
-  transition: all 0.4s cubic-bezier(0.68, 0.18, 0.53, 0.18) 0.1s;
+  z-index: $asideIndex;
+  opacity: 0;
+  // transition: all 0.25s cubic-bezier(0.68, 0.18, 0.53, 0.18) 0.1s;
+  transition: all 0.25s;
+  transform: translateX(-100%);
+
+  &.visible{
+    transform: translateX(0);
+    opacity: 1;
+  }
+  @media (min-width: 501px) {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  // @media (max-width: 500px) {
+  //   background: red;
+  //   position: fixed;
+  //   top: 0;
+  //   left: 0;
+  //   padding-top: 80px;
+  //   box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.1);
+  // }
   > h2 {
     margin-bottom: 4px;
     margin-top: 16px;
